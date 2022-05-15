@@ -1,12 +1,12 @@
 const { Composer } = require('telegraf');
 const composer = new Composer();
-const { messages } = require('../messages/messages');
+const { help } = require('../messages/messages');
 
-// Старт
+// Help
 
 composer.help((ctx) => {
   try {
-    ctx.reply(messages.help);
+    ctx.reply(help);
   } catch (error) {
     ctx.reply('Что-то пошло не так, поробуйте снова');
   }

@@ -1,13 +1,13 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { messages } = require('../messages/messages');
+const { start } = require('../messages/messages');
 
 // Старт
 
 composer.start(async (ctx) => {
   try {
     await ctx.reply(
-      `Здравствуйте, ${ctx.message.from.first_name} \ud83d\udc4b!\n\n${messages.start}`,
+      `Здравствуйте, ${ctx.message.from.first_name} \ud83d\udc4b!\n\n${start}`,
       Markup.inlineKeyboard([
         [Markup.button.callback('Информация по отелю', 'btn_category_1')],
         [

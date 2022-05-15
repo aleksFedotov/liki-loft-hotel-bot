@@ -1,39 +1,35 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { places } = require('../messages/messages');
+const { drinks } = require('../messages/messages');
 const { sendMsgAction } = require('../helpers/sendMsg');
 const { defaultButtons } = require('../buttons/buttons');
 
 // Интересные места
 
-composer.action('btn_category_2', async (ctx) => {
+composer.action('btn_category_7', async (ctx) => {
   try {
     await ctx.answerCbQuery();
     await ctx.replyWithHTML(
-      places.main,
+      drinks.main,
       Markup.inlineKeyboard([
-        [Markup.button.callback('Церковь Анненкирхе', 'category2_btn1')],
-        [Markup.button.callback('Академия Штиглица', 'category2_btn2')],
-        [Markup.button.callback('Мозаичный дворик', 'category2_btn3')],
-        [
-          Markup.button.callback(
-            'Открытая красивая парадная',
-            'category2_btn4'
-          ),
-        ],
-        [
-          Markup.button.callback(
-            'Оранжерея Таврического сада',
-            'category2_btn5'
-          ),
-        ],
-        [
-          Markup.button.callback(
-            'Музей Анны Ахматовой в Фонтанном Доме',
-            'category2_btn6'
-          ),
-        ],
-        [Markup.button.callback('Сад Дружбы', 'category2_btn7')],
+        [Markup.button.callback('Горячие напитки', 'category7_btn1')],
+        [Markup.button.callback('Холодные напитки', 'category7_btn2')],
+      ])
+    );
+  } catch (error) {
+    console.log(error);
+    ctx.reply('Что-то пошло не так, поробуйте снова');
+  }
+});
+
+composer.action('category7_btn1', async (ctx) => {
+  try {
+    await ctx.answerCbQuery();
+    await ctx.replyWithHTML(
+      drinks.hot.main,
+      Markup.inlineKeyboard([
+        [Markup.button.callback('Горячие напитки', 'category7_btn1')],
+        [Markup.button.callback('Холодные напитки', 'category7_btn2')],
       ])
     );
   } catch (error) {
@@ -43,49 +39,49 @@ composer.action('btn_category_2', async (ctx) => {
 });
 
 sendMsgAction(
-  'category2_btn1',
+  'category7_btn1',
   'assets/images/places/place_1.jpg',
   places.place_1,
   composer,
   defaultButtons
 );
 sendMsgAction(
-  'category2_btn2',
+  'category7_btn7',
   'assets/images/places/place_2.jpg',
-  places.place_2,
+  places.place_7,
   composer,
   defaultButtons
 );
 sendMsgAction(
-  'category2_btn3',
+  'category7_btn3',
   'assets/images/places/place_3.jpg',
   places.place_3,
   composer,
   defaultButtons
 );
 sendMsgAction(
-  'category2_btn4',
+  'category7_btn4',
   'assets/images/places/place_4.jpg',
   places.place_4,
   composer,
   defaultButtons
 );
 sendMsgAction(
-  'category2_btn5',
+  'category7_btn5',
   'assets/images/places/place_5.jpg',
   places.place_5,
   composer,
   defaultButtons
 );
 sendMsgAction(
-  'category2_btn6',
+  'category7_btn6',
   'assets/images/places/place_6.jpg',
   places.place_6,
   composer,
   defaultButtons
 );
 sendMsgAction(
-  'category2_btn7',
+  'category7_btn7',
   'assets/images/places/place_7.jpg',
   places.place_7,
   composer,
