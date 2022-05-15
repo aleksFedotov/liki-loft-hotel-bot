@@ -1,5 +1,8 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
+require('dotenv').config();
+
+const channel = process.env.CHANNELS_USERNAME;
 
 // Интересные места
 
@@ -83,7 +86,7 @@ composer.action('question_btn', async (ctx) => {
     );
 
     await ctx.telegram.sendMessage(
-      435226457,
+      channel,
       `У гостя ${ctx.session.name} из ${ctx.session.room} номера есть вопрос, свяжитесь с ним, как можно скорее через telegram`
     );
   } catch (error) {
@@ -105,7 +108,7 @@ composer.action('docs_btn', async (ctx) => {
     );
 
     await ctx.telegram.sendMessage(
-      435226457,
+      channel,
       `Гостю ${ctx.session.name} из ${ctx.session.room} запросил отчетные документы, сделайте документы в ближайшее время`
     );
   } catch (error) {

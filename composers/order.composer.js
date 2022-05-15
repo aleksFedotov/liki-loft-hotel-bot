@@ -5,6 +5,8 @@ const fetch = require('node-fetch');
 
 require('dotenv').config();
 
+const channel = process.env.CHANNELS_USERNAME;
+
 // Оброботка заказа нахождение товара или услуги в БД, запрос кол-ва товара или услуг у гостя
 
 composer.action(/^order_btn/, async (ctx) => {
@@ -95,7 +97,7 @@ composer.action('confirm', async (ctx) => {
       }
     );
     await ctx.telegram.sendMessage(
-      435226457,
+      channel,
       `Гость ${ctx.session.name} из ${ctx.session.room} хочет приобрести ${itemName} в кол-ве ${qty}\n\nНа общую сумму ${price} рублей.\n\nДождитесь подтверждения оплаты и после доставте заказ в номер.`
     );
   } catch (error) {
@@ -203,7 +205,7 @@ composer.on('photo', async (ctx) => {
     'Спасибо за чек! Сейчас администротр проверяте статус оплаты и если все в порядке он доставит Вам Ваш заказ!'
   );
   await ctx.telegram.sendPhoto(
-    435226457,
+    channel,
     {
       url: `https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${path}`,
     },
