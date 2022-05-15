@@ -59,7 +59,6 @@ composer.action(/^qty/, async (ctx) => {
     // Получение наименования товара или услуги из ДБ и подсчет итоговой стоимсоти
     const itemName = servicesAndGoods[itemId].item;
     const totalPrice = servicesAndGoods[itemId].price * +qty;
-    console.log(totalPrice);
 
     // Сохранение итоговой стоимости и кол-ва в сессии
     ctx.session.order.price = totalPrice;
