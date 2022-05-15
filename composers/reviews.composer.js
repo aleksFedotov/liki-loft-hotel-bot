@@ -1,6 +1,6 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { reviews } = require('../messages/messages');
+const { reviews } = require('../data/messages');
 
 // Отзывы
 

@@ -1,6 +1,6 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { transfer } = require('../messages/messages');
+const { transfer } = require('../data/messages');
 const { defaultButtons } = require('../buttons/buttons');
 
 // Трансфер

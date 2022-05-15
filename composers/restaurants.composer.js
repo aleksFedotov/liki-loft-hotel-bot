@@ -1,6 +1,6 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { restaurants } = require('../messages/messages');
+const { restaurants } = require('../data/messages');
 const { sendMsgAction } = require('../helpers/sendMsg');
 const { defaultButtons } = require('../buttons/buttons');
 

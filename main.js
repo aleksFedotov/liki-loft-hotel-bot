@@ -1,8 +1,11 @@
-const { Telegraf, Markup } = require('telegraf');
+const { Telegraf, session } = require('telegraf');
+
 require('dotenv').config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
+// Создание сессии
+bot.use(session());
 // Команда стартa
 
 bot.use(require('./composers/start.composer'));
@@ -32,6 +35,8 @@ bot.use(require('./composers/services.composer'));
 
 // Отчетные документы
 bot.use(require('./composers/docs.composer'));
+// Напитки документы
+bot.use(require('./composers/drinks.composer'));
 
 // Трансфер
 bot.use(require('./composers/transfer.composer'));
@@ -43,6 +48,12 @@ bot.use(require('./composers/contacts.composer'));
 
 // Отзывы
 bot.use(require('./composers/reviews.composer'));
+
+// кнопки
+bot.use(require('./composers/buttons.composer'));
+
+// Заказы
+bot.use(require('./composers/order.composer'));
 
 bot.launch();
 

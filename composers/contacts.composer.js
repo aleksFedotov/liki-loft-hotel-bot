@@ -1,6 +1,6 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { contacts } = require('../messages/messages');
+const { contacts } = require('../data/messages');
 const { defaultButtons } = require('../buttons/buttons');
 
 // Контакты отеля

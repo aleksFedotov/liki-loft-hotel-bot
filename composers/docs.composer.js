@@ -1,6 +1,6 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { docs } = require('../messages/messages');
+const { docs } = require('../data/messages');
 const { docsButtons } = require('../buttons/buttons');
 
 // Интересные места

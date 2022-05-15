@@ -1,6 +1,6 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const { parking } = require('../messages/messages');
+const { parking } = require('../data/messages');
 const { defaultButtons } = require('../buttons/buttons');
 
 // Парковка

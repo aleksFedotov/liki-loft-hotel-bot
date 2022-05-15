@@ -1,6 +1,6 @@
 const { Composer } = require('telegraf');
 const composer = new Composer();
-const { help } = require('../messages/messages');
+const { help } = require('../data/messages');
 
 // Help
 
